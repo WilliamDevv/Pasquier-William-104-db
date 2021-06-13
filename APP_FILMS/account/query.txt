@@ -1,0 +1,17 @@
+INSERT INTO `t_pseudo`(`id_pseudo`, `pseudo`) VALUES(NULL, 'BientotLaRolex');
+INSERT INTO `t_mail`(`id_mail`, `mail`) VALUES(NULL, 'rolex@rolex.com');
+INSERT INTO `t_motdepasse`(`id_motdepasse`, `motdepasse`) VALUES(NULL, 'superrolex17_');
+
+INSERT INTO `t_personne`(`id_personne`, `pers_nom`, `pers_prenom`, `pers_dateDeNaissance`, `pers_ageValide`, `fk_pseudo`, `fk_mail`, `fk_motDePasse`) VALUES (NULL, 'Alter', 'Theo', '2002-09-19', NULL, (SELECT `id_pseudo` FROM `t_pseudo` WHERE `pseudo` = 'BientotLaRolex'), (SELECT `id_mail` FROM `t_mail` WHERE `mail` = 'rolex@rolex.com'), (SELECT `id_motdepasse` FROM `t_motdepasse` WHERE `motdepasse` = 'superrolex17_'));
+
+
+
+INSERT INTO `t_pseudo`(`id_pseudo`, `pseudo`) VALUES(NULL, 'BientotLaRolex');
+INSERT INTO `t_mail`(`id_mail`, `mail`) VALUES(NULL, 'rolex@rolex.com');
+INSERT INTO `t_motdepasse`(`id_motdepasse`, `motdepasse`) VALUES(NULL, 'superrolex17_');
+
+INSERT INTO `t_personne`(`id_personne`, `pers_nom`, `pers_prenom`, `pers_dateDeNaissance`, `pers_ageValide`, `fk_pseudo`, `fk_mail`, `fk_motDePasse`) VALUES (NULL, 'Alter', 'Theo', '2002-09-19', NULL, NULL, NULL, NULL);
+
+UPDATE `t_personne` SET `fk_pseudo` = (SELECT `id_pseudo` FROM `t_pseudo` WHERE `pseudo` = 'BientotLaRolex') WHERE `t_personne`.`id_personne` = (SELECT `id_personne` FROM `t_personne` WHERE `id_personne` = (SELECT LAST_INSERT_ID()));
+UPDATE `t_personne` SET `fk_pseudo` = (SELECT `id_mail` FROM `t_mail` WHERE `mail` = 'rolex@rolex.com') WHERE `t_personne`.`id_personne` = (SELECT `id_personne` FROM `t_personne` WHERE `id_personne` = (SELECT LAST_INSERT_ID()));
+UPDATE `t_personne` SET `fk_pseudo` = (SELECT `id_motdepasse` FROM `t_motdepasse` WHERE `motdepasse` = 'superrolex17_') WHERE `t_personne`.`id_personne` = (SELECT `id_personne` FROM `t_personne` WHERE `id_personne` = (SELECT LAST_INSERT_ID()));

@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;500&display=swap');
+$first-color: #e1415f;
+$second-color: #5b1a1a;
+
+$gradient-color: linear-gradient(135deg, $first-color, $second-color);
+$second-gradient-color: linear-gradient(-135deg, $first-color, $second-color);
+
+$border-color: #cccccc;
+
+$tfirst-color: #f08f4e;
+$tsecond-color: #e44d33;
+
+$testfirst-color: #71b7e6;
+$testsecond-color: #9b59b6;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+#register{
+    color: black;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background: $gradient-color;
+    .container{
+        max-width: 700px;
+        width: 100%;
+        background: white;
+        padding: 25px 30px;
+        border-radius: 10px;
+        /*box-shadow: -10px -10px 10px 3px rgba($color: darken($second-color, 25%), $alpha: 0.15), 10px 10px 15px 3px rgba($color: lighten($first-color, 5%), $alpha: 0.7);*/
+        .title{
+            font-size: 35px;
+            font-weight: 500;
+            padding-bottom: 15px;
+        }
+        .personal-informations{
+            padding-bottom: 15px;
+        }
+        .account-informations{
+            padding-bottom: 15px;
+        }
+        .sub-title{
+            font-size: 25px;
+        }
+        .user-details{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            .input-box{
+                width: calc(100% / 2 - 20px);
+                margin: 10px 0 12px 0;
+                .details{
+                    display: block;
+                    margin-bottom: 5px;
+                }
+                input{
+                   height: 45px; 
+                   width: 100%;
+                   padding-left: 10px;
+                   outline: none;
+                   border-radius: 5px;
+                   border: 1px solid $border-color;
+                   border-bottom-width: 2px;
+                   font-size: 16px;
+                   transition: all 0.3s;
+                   &:focus{
+                        border-color: $second-color;
+                   }
+                   &:valid{
+                        border-color: $second-color;
+                   }
+                }
+            }
+        }
+        .register-btn{
+            height: 45px;
+            margin: 25px 0 10px 0;
+            button{
+                height: 100%;
+                width: 100%;
+                outline: none;
+                border: none;
+                border-radius: 8px;
+                color: white;
+                font-size: 18px;
+                letter-spacing: 2px;
+                background: $gradient-color;
+                transition: ease-in 0.3s;
+                &:hover{
+                    background: $second-gradient-color;
+                    transition: ease-out 0.3s;
+                }
+            }
+        }
+    }
+}
+
+/*Responsive (à faire)
+
+@media (max-width: 584px){
+    .container{
+        max-width: 100%px;
+    }
+}*/

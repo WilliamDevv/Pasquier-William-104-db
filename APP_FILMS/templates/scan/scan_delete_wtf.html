@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %} Effacer un SCAN(WTF) {% endblock %}
+{% block body %}
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<p>
+				Effacer un SCAN
+			</p>
+			<form action="" method="POST" novalidate>
+				<!-- Protection contre les attaques Cross-Site Request Forgery (CSRF) -->
+				{{ form_delete.hidden_tag() }}
+				<table class="table table-bordered table-sm">
+					{% if data_scan_asscocies %}
+						<h3>Ce scan est associé avec le(s) genre(s) suivant(s) :</h3>
+					{% else %}
+						<h3>Ce scan à effacer n'est associé à aucun genre.</h3>
+					{% endif %}
+					{% if data_scan_asscocies %}
+						<thead>
+							<tr>
+								<th>
+									GENRE(S)
+								</th>
+							</tr>
+						</thead>
+						{% for row in data_scan_asscocies %}
+							<tbody>
+								<tr>
+									<td>
+										{{ row.genre }}
+									</td>
+								</tr>
+							</tbody>
+						{% endfor %}
+					{% endif %}
+				</table>
+
+
+				<div class="form-group">
+					<p>
+						{{ form_delete.scan_titre_delete_wtf.label }}<br>
+						{{ form_delete.scan_titre_delete_wtf(size=32, readonly=true) }}<br>
+						{{ form_delete.scan_auteur_delete_wtf.label }}<br>
+						{{ form_delete.scan_auteur_delete_wtf(size=32, readonly=true) }}<br>
+						{{ form_delete.scan_dessinateur_delete_wtf.label }}<br>
+						{{ form_delete.scan_dessinateur_delete_wtf(size=32, readonly=true) }}<br>
+						{{ form_delete.scan_description_delete_wtf.label }}<br>
+						{{ form_delete.scan_description_delete_wtf(size=32, readonly=true) }}<br>
+						{{ form_delete.scan_nombreDePages_delete_wtf.label }}<br>
+						{{ form_delete.scan_nombreDePages_delete_wtf(size=32, readonly=true) }}<br>
+						{{ form_delete.scan_maisonDEdition_delete_wtf.label }}<br>
+						{{ form_delete.scan_maisonDEdition_delete_wtf(size=32, readonly=true) }}<br>
+					</p>
+				</div>
+				{{ form_delete.submit_btn_conf_del(class="btn btn-info") }}
+
+				{% if btn_submit_del %}
+					{{ form_delete.submit_btn_del(class="btn btn-danger") }}
+				{% endif %}
+
+				{{ form_delete.submit_btn_annuler(class="btn btn-primary") }}
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock %}
+

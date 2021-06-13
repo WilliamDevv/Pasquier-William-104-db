@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block title %} Ajouter une PERSONNE (WTF) {% endblock %}
+{% block body %}
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<p>
+				Ajouter un nouveau GENRE (WTForms)
+			</p>
+			<form action="" method="POST" novalidate>
+				<!-- Protection contre les attaques Cross-Site Request Forgery (CSRF) -->
+				{{ form.hidden_tag() }}
+				<div class="form-group">
+					<p>
+						{{ form.scan_titre_wtf.label }}<br>
+						{{ form.scan_titre_wtf(size=32) }}<br>
+						{% for error in form.scan_titre_wtf.errors %}
+							<span style="color: red;">[{{ error }}]</span>
+						{% endfor %}
+					</p>
+					<p>
+						{{ form.scan_auteur_wtf.label }}<br>
+						{{ form.scan_auteur_wtf(size=32) }}<br>
+						{% for error in form.scan_auteur_wtf.errors %}
+							<span style="color: red;">[{{ error }}]</span>
+						{% endfor %}
+					</p>
+					<p>
+						{{ form.scan_dessinateur_wtf.label }}<br>
+						{{ form.scan_dessinateur_wtf(size=32) }}<br>
+						{% for error in form.scan_dessinateur_wtf.errors %}
+							<span style="color: red;">[{{ error }}]</span>
+						{% endfor %}
+					</p>
+					<p>
+						{{ form.scan_description_wtf.label }}<br>
+						{{ form.scan_description_wtf(size=32) }}<br>
+					</p>
+					<p>
+						{{ form.scan_nombreDePages_wtf.label }}<br>
+						{{ form.scan_nombreDePages_wtf(size=32) }}<br>
+						{% for error in form.scan_nombreDePages_wtf.errors %}
+							<span style="color: red;">[{{ error }}]</span>
+						{% endfor %}
+					</p>
+					<p>
+						{{ form.scan_maisonDEdition_wtf.label }}<br>
+						{{ form.scan_maisonDEdition_wtf(size=32) }}<br>
+						{% for error in form.scan_maisonDEdition_wtf.errors %}
+							<span style="color: red;">[{{ error }}]</span>
+						{% endfor %}
+					</p>
+				</div>
+				{{ form.submit(class="btn btn-primary") }}
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock %}
+

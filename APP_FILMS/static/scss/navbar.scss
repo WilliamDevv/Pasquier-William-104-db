@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;500&display=swap');
+$first-color: #e1415f;
+$second-color: #5b1a1a;
+
+$gradient-color: linear-gradient(135deg, $first-color, $second-color);
+$second-gradient-color: linear-gradient(-135deg, $first-color, $second-color);
+
+$border-color: #cccccc;
+
+$tfirst-color: #f08f4e;
+$tsecond-color: #e44d33;
+
+$testfirst-color: #71b7e6;
+$testsecond-color: #9b59b6;
+
+
+nav{
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+    font-size: 16px;
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 10%;
+        width: 100%;
+        background-color: white;
+        .logo{
+            cursor: pointer;
+        }
+        .nav-links{
+            list-style: none;
+            li{
+                display: inline-block;
+                padding: 0 20px;
+                a{
+                    color: darken($first-color, 15%);
+                    text-decoration: none;
+                    transition: ease-out 0.2s;
+                    &:hover{
+                        transition: ease-in 0.2s;
+                        color: $second-color;
+                    }
+                }
+            }
+        }
+        .account-button{
+            button{
+                color: darken($first-color, 15%);
+                font-size: 16px;
+                letter-spacing: 2px;
+                background-color: white;
+                height: 30px;
+                width: 190px;
+                border: 2px solid darken($first-color, 15%);
+                border-radius: 8px;
+                transition: ease-out 0.2s;
+                &:hover{
+                    transition: ease-in 0.2s;
+                    color: white;
+                    border-color: $second-color;
+                    background-color: $second-color;
+                }
+            }
+        }
+    }
+}

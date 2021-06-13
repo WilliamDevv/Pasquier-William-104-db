@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %} S'enregistrer {% endblock %}
+{% block body %}
+    <main id="register">
+        <div class="container">
+            <div class="title">S'enregistrer</div>
+            <form action="#" method="post" id="register-form">
+                <div class="personal-informations">
+                    <div class="sub-title">Information personelle</div>
+                    <div class="user-details">
+                        <div class="input-box">
+                            <label for="name" class="details">Nom</label>
+                            <input type="text" class="details-input" id="name" placeholder="Entrez votre nom" required />
+                        </div>
+                        <div class="input-box">
+                            <label for="firstname" class="details">Prénom</label>
+                            <input type="text" class="details-input" id="firstname" placeholder="Entrez votre prénom" required />
+                        </div>
+                        <div class="input-box">
+                            <label for="pseudo" class="details">Pseudo</label>
+                            <input type="text" class="details-input" id="pseudo" placeholder="Entrez votre pseudo" required />
+                        </div>
+                        <div class="input-box">
+                            <label for="birthdate" class="details">Date de naissance</label>
+                            <input type="date" format="" class="details-input" id="birthdate" placeholder="Entrez votre date de naissance" required />
+                        </div>
+                    </div>
+                </div>
+                <div class="account-informations">
+                    <div class="sub-title">Information du compte</div>
+                    <div class="user-details">
+                        <div class="input-box">
+                            <label for="mail" class="details">Email</label>
+                            <input type="email" class="details-input" id="mail" placeholder="Entrez votre adresse mail" required />
+                        </div>
+                        <div class="input-box">
+                            <label for="confirm-email" class="details">Confirmer l'email</label>
+                            <input type="email" class="details-input" id="confirm-email" placeholder="Confirmer votre adresse mail" required />
+                        </div>
+                        <div class="input-box">
+                            <label for="password" class="details">Mot de passe</label>
+                            <input type="password" class="details-input" id="password" placeholder="Entrez votre mot de passe" required />
+                        </div>
+                        <div class="input-box">
+                            <label for="confirm-password" class="details">Confirmer le mot de passe</label>
+                            <input type="password" class="details-input" id="confirm-password" placeholder="Confirmer votre mot de passe" required />
+                        </div>
+                    </div>
+                </div>
+                <div class="register-btn">
+                    <button type="submit" form="register-form" id="register-button">S'enregistrer</button>
+                </div>
+            </form>
+        </div>
+    </main>
+{% endblock %}

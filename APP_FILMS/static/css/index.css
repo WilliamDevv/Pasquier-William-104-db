@@ -1,0 +1,63 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+#index {
+  color: black;
+  display: flex;
+  height: 75vh;
+  justify-content: center;
+  padding: 15px;
+  background: linear-gradient(135deg, #e1415f, #5b1a1a);
+}
+
+#index .lastnews-container {
+  max-width: 85%;
+  width: 45%;
+  height: 350px;
+  box-sizing: border-box;
+  background: white;
+  padding: 25px 25px;
+  margin-top: 100px;
+  border-radius: 10px;
+}
+
+#index .lastnews-container #lastnews-title {
+  display: flex;
+  justify-content: center;
+  text-decoration: underline;
+}
+
+#index .lastnews-container #lastnews-scan-title {
+  padding-top: 25px;
+  padding-bottom: 15px;
+}
+
+#index .lastnews-container #lastnews-paragraph {
+  padding-bottom: 40px;
+}
+
+#index .lastnews-container #link-scan {
+  color: #b81d3a;
+  text-decoration: none;
+  transition: ease-out 0.2s;
+}
+
+#index .lastnews-container:hover #link-scan {
+  transition: ease-in 0.2s;
+  color: #5b1a1a;
+}
+
+/*Responsive (à faire)
+
+@media (max-width: 584px){
+    .container{
+        max-width: 100%px;
+    }
+}*/
+/*# sourceMappingURL=index.css.map */

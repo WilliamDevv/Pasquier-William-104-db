@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mon beau projet{% endblock %}</title>
+
+	<!-- Bootstrap CSS en local -->
+	<!-- OM 2020.05.04 OM JE PREFERE GARDER MES FICHIERS CSS ET JS DANS UN REPERTOIRE "EN LOCAL"
+        SINON ON EST TOUJOURS DEPENDANT D'UNE LIAISON A L'INTERNET. -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="{{ url_for('static', filename='js/jquery.slim.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='bootstrap-5.0.0-beta2-dist/js/bootstrap.min.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="{{ url_for('static', filename='js/register-validation.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/login-validation.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+	<!-- Stylesheets en local -->
+	<!-- https://bootswatch.com/darkly/ -->
+	<!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootswatch-4/darkly/bootstrap.min.css') }}">-->
+
+	<!-- https://bootswatch.com/superhero/ -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/register.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/login.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/confirmation.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/navbar.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/footer.css') }}">
+	<!-- https://flask.palletsprojects.com/en/1.1.x/patterns/favicon/ -->
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+	<nav>
+        <div class="container">
+            <a href="{{ url_for('newindex') }}"><img src="{{ url_for('static', filename='img/icons8-livre-52.png') }}" alt="logo" class="logo"></a>
+            <ul class="nav-links">
+                <li><a href="#">Scans</a></li>
+                <li><a href="#">Recommendations</a></li>
+                <li><a href="#">Contacts</a></li>
+                <li><a href="#">A propos</a></li>
+                <li><a href="{{ url_for('avoir_genre_afficher', id_scan_sel=0) }}">Surprise pour maccaud ❤️</a></li>
+            </ul>
+            <div class="account-button">
+				<a href="{{ url_for('register') }}"><button class="register-button">S'enregister</button></a>
+				<a href="{{ url_for('login') }}"><button class="login-button">Se connecter</button></a>
+            </div>
+        </div>
+    </nav>
+
+	{% block body %}{% endblock %}
+
+	{% include 'newfooter.html' %}
+</body>
+</html>

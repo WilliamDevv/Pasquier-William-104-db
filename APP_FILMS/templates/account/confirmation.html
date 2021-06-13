@@ -1,0 +1,13 @@
+{% extends "newbase.html" %}
+{% block title %} Confirmation {% endblock %}
+{% block body %}
+        <main id="confirm">
+            <div class="container">
+                <div class="title">Confirmation</div>
+                <div class="sub-title">Bienvenue {{ firstname_user_value }} {{ name_user_value }}</div>
+                <div class="return-btn">
+                    <a href="{{ url_for('newindex') }}" class="return-index"><button>Retourner a l'acceuil</button></a>
+                </div>
+            </div>
+        </main>
+{% endblock %}

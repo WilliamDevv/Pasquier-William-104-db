@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block title %} Afficher SCAN {% endblock %}
+{% block body %}
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<p>
+				Scan à disposition. <a class="btn btn-primary" href="{{ url_for('scan_ajouter_wtf') }}" role="button">Ajouter</a>
+			</p>
+            <table class="table table-bordered table-sm">
+            {% if data %}
+                <thead>
+                    <tr>
+                        <th class="align-middle">
+                            ID
+                        </th>
+                        <th class="align-middle">
+                            Titre du scan
+                        </th>
+                        <th class="align-middle">
+                           	Nom de l'auteur
+                        </th>
+						<th class="align-middle">
+                           	Nom du dessinateur
+                        </th>
+						<th class="align-middle">
+                            Description du scan
+                        </th>
+						<th class="align-middle">
+                            Nombre de pages
+                        </th>
+						<th class="align-middle">
+                            Maison d'édition
+                        </th>
+                    </tr>
+                </thead>
+            {% endif %}
+
+            {% for row in data %}
+				<tbody>
+					<tr>
+						<td class="align-middle">
+							{{ row.id_scan }}
+						</td>
+						<td class="align-middle">
+							{{ row.scan_titre }}
+						</td>
+						<td class="align-middle">
+							{{ row.scan_auteur }}
+						</td>
+						<td class="align-middle">
+							{{ row.scan_dessinateur }}
+						</td>
+						<td class="align-middle">
+							{{ row.scan_description }}
+						</td>
+						<td class="align-middle">
+							{{ row.scan_nombreDePages }}
+						</td>
+						<td class="align-middle">
+							{{ row.scan_maisonDEdition }}
+						</td>
+						<td class="text-center" class="align-middle">
+							<a class="btn btn-warning" href="{{ url_for('scan_update_wtf', id_scan_btn_edit_html=row.id_scan) }}" role="button">Edit</a>
+						</td>
+						<td class="text-center" class="align-middle">
+							<a class="btn btn-danger" href="{{ url_for('scan_delete_wtf', id_scan_btn_delete_html=row.id_scan) }}" role="button">Delete</a>
+						</td>
+					</tr>
+				</tbody>
+            {% else %}
+				<tbody>
+					<tr>
+						<td>
+							Aucune personne.
+						</td>
+						<td>
+							<a class="btn btn-primary" href="" role="button">Ajouter</a>
+						</td>
+					</tr>
+				</tbody>
+            {% endfor %}
+			</table>
+		</div>
+	</div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %} Se connecter {% endblock %}
+{% block body %}
+    <main id="login">
+        <div class="container">
+            <div class="title">Se connecter</div>
+            <form action="#" method="post" id="login-form">
+                <div class="account-informations">
+                    <div class="sub-title">Information du compte</div>
+                    <div class="user-details">
+                        <div class="input-box">
+                            <label for="pseudo" class="details">Pseudo</label>
+                            <input type="text" class="details-input" id="pseudo" placeholder="Entrez votre pseudo" required />
+                        </div>
+                        <div class="input-box">
+                            <label for="password" class="details">Mot de passe</label>
+                            <input type="password" class="details-input" id="password" placeholder="Entrez votre mot de passe" required />
+                        </div>
+                    </div>
+                </div>
+                <div class="login-btn">
+                    <button type="submit" form="login-form" id="login-button">Se connecter</button>
+                </div>
+            </form>
+        </div>
+    </main>
+{% endblock %}

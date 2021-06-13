@@ -1,0 +1,113 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+#register {
+  color: black;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background: linear-gradient(135deg, #e1415f, #5b1a1a);
+}
+
+#register .container {
+  max-width: 700px;
+  width: 100%;
+  background: white;
+  padding: 25px 30px;
+  border-radius: 10px;
+  /*box-shadow: -10px -10px 10px 3px rgba($color: darken($second-color, 25%), $alpha: 0.15), 10px 10px 15px 3px rgba($color: lighten($first-color, 5%), $alpha: 0.7);*/
+}
+
+#register .container .title {
+  font-size: 35px;
+  font-weight: 500;
+  padding-bottom: 15px;
+}
+
+#register .container .personal-informations {
+  padding-bottom: 15px;
+}
+
+#register .container .account-informations {
+  padding-bottom: 15px;
+}
+
+#register .container .sub-title {
+  font-size: 25px;
+}
+
+#register .container .user-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#register .container .user-details .input-box {
+  width: calc(100% / 2 - 20px);
+  margin: 10px 0 12px 0;
+}
+
+#register .container .user-details .input-box .details {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#register .container .user-details .input-box input {
+  height: 45px;
+  width: 100%;
+  padding-left: 10px;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #cccccc;
+  border-bottom-width: 2px;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+#register .container .user-details .input-box input:focus {
+  border-color: #5b1a1a;
+}
+
+#register .container .user-details .input-box input:valid {
+  border-color: #5b1a1a;
+}
+
+#register .container .register-btn {
+  height: 45px;
+  margin: 25px 0 10px 0;
+}
+
+#register .container .register-btn button {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 18px;
+  letter-spacing: 2px;
+  background: linear-gradient(135deg, #e1415f, #5b1a1a);
+  transition: ease-in 0.3s;
+}
+
+#register .container .register-btn button:hover {
+  background: linear-gradient(-135deg, #e1415f, #5b1a1a);
+  transition: ease-out 0.3s;
+}
+
+/*Responsive (à faire)
+
+@media (max-width: 584px){
+    .container{
+        max-width: 100%px;
+    }
+}*/
+/*# sourceMappingURL=register.css.map */
