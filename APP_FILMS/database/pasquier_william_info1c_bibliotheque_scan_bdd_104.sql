@@ -339,6 +339,7 @@ CREATE TABLE IF NOT EXISTS `t_scan` (
 
 INSERT INTO `t_scan` (`id_scan`, `scan_titre`, `scan_auteur`, `scan_dessinateur`, `scan_description`, `scan_nombreDePages`, `scan_maisonDEdition`, `fk_fichier`) VALUES
 (1, 'Jojo''s Bizarre Adventure - Steel Ball Run - Tome 17', 'Hirohiko Araki', 'Hirohiko Araki', 'Tome 17 avec l''apparition de Funny Valentine qui est sah sexy je bande en le voyant WALLAH', 106, 'Tonkam', 1);
+(2, 'Chainsaw man - Tome 1', 'Tatsuki Fujimoto', 'Tatsuki Fujimoto', 'C\'est un boug avec une vie de merde (comme moi) qui peut d\'un coup devenir le démon-tronçonneuse', 192, 'Kazé', NULL);
 
 -- --------------------------------------------------------
 
